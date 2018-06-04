@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Team Iron Champs 54th Branch Rajender Nagar</string>
+
+    <string name="password">password</string>
+
+    <string name="login">Log In</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+
 </resources>
