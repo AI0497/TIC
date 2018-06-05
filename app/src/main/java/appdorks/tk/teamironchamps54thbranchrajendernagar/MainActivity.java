@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
                     {
                         // start new activity
                         startActivity(new Intent(MainActivity.this, Dashboard.class));
+                        finish();
                     }
                     else
                     {
