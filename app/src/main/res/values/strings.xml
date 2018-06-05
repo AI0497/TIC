@@ -6,7 +6,7 @@
     <string name="login">Log In</string>
     <string name="title_activity_dashboard">Dashboard</string>
     <string name="member_list">Member List</string>
-    <string name="title_activity_add_member">AddMember</string>
+    <string name="title_activity_add_member">Add Member</string>
 
     <string name="new_member_form_first_name">First Name</string>
     <string name="new_member_form_last_name"> Last Name</string>
