@@ -1,5 +1,6 @@
 package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,13 @@ public class AddMember extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
 }
