@@ -8,5 +8,18 @@
     <string name="member_list">Member List</string>
     <string name="title_activity_add_member">AddMember</string>
 
+    <string name="new_member_form_first_name">First Name</string>
+    <string name="new_member_form_last_name"> Last Name</string>
+    <string name="new_member_form_number">Number</string>
+    <string name="new_member_form_gender">Gender</string>
+    <string name="new_member_form_month_start_date">Joining Date</string>
+    <string name="new_member_form_height">Height</string>
+    <string name="new_member_form_weight">Weight</string>
+    <string name="new_member_form_dob">D.O.B</string>
+    <string name="new_member_form_phone">Phone</string>
+    <string name="new_member_form_emergency_phone">Emergency Phone</string>
+    <string name="radio_text_male">male</string>
+    <string name="radio_text_female">female</string>
+
 
 </resources>
