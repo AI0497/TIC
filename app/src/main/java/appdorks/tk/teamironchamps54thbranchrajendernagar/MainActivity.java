@@ -1,6 +1,7 @@
 package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,10 @@ public class MainActivity extends AppCompatActivity
 
                 if (userPassword.isEmpty())
                 {
-                    Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();
+                    // replace this Toast with a Snackbar
+                    /*Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
+                    Snackbar.make(v, "please enter a password", Snackbar.LENGTH_SHORT)
+                            .setAction("Action", null).show();
                 }
                 else
                 {
@@ -45,7 +49,9 @@ public class MainActivity extends AppCompatActivity
                     }
                     else
                     {
-                        Toast.makeText(MainActivity.this, "incorrect password", Toast.LENGTH_SHORT).show();
+                        /*Toast.makeText(MainActivity.this, "incorrect password", Toast.LENGTH_SHORT).show();*/
+                        Snackbar.make(v, "incorrect password", Snackbar.LENGTH_SHORT)
+                                .setAction("Action", null).show();
                     }
                 }
             }
