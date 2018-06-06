@@ -25,14 +25,14 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/imgBtnPhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/ic_menu_camera" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imgPhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
