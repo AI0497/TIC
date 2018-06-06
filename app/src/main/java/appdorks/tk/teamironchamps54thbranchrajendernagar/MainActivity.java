@@ -1,10 +1,12 @@
 package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +36,16 @@ public class MainActivity extends AppCompatActivity
 
                 if (userPassword.isEmpty())
                 {
+
+                    /*hide the software keyboard when log in button is clicked*/
+                    // check if no view has focus
+                    View currenScreenView = MainActivity.this.getCurrentFocus();
+                    if (currenScreenView != null)
+                    {
+                        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        inputMethodManager.hideSoftInputFromWindow(currenScreenView.getWindowToken(), 0);
+                    }
+
                     // replace this Toast with a Snackbar
                     /*Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
                     Snackbar.make(v, "please enter a password", Snackbar.LENGTH_SHORT)
