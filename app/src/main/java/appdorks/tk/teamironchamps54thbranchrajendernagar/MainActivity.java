@@ -1,9 +1,13 @@
 package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -89,24 +93,36 @@ public class MainActivity extends AppCompatActivity
     {
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA))
         {
-            // this device has a camera
+            // this device has a camera, toast the number of cameras to the user -- commented
+            /*Toast.makeText(context, Camera.getNumberOfCameras() + " cameras found " , Toast.LENGTH_LONG).show();*/
+            // check if the phone has camera permission
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
+            {
+                /*if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA))
+                {
+
+                }
+                else
+                {
+                    // No explanation needed; request the permission
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.READ_CONTACTS}, 1);
+                }*/
+                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 1);
+            }
+            else
+            {
+                // Permission has already been granted
+            }
+
             return true;
         }
         else
         {
             // no camera on this device
+            Toast.makeText(context, "camera hardware not found!", Toast.LENGTH_LONG).show();
             return false;
         }
-    }
-
-    public void checkPermissions()
-    {
-        //TODO check for hardware and permissions here when the app loads
-
-        // TODO check for camera
-
-
-
     }
 
 }
