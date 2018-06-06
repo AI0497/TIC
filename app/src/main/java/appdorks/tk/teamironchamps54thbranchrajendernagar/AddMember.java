@@ -82,6 +82,8 @@ public class AddMember extends AppCompatActivity
         {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            mImageButton.setVisibility(View.GONE);
+            mImageView.setVisibility(View.VISIBLE);
             mImageView.setImageBitmap(imageBitmap);
 
             // TODO: save the image to external storage for the user
