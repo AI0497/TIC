@@ -61,6 +61,15 @@ public class MainActivity extends AppCompatActivity
                     }
                     else
                     {
+                        /*hide the software keyboard when log in button is clicked*/
+                        // check if no view has focus
+                        View currenScreenView = MainActivity.this.getCurrentFocus();
+                        if (currenScreenView != null)
+                        {
+                            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                            inputMethodManager.hideSoftInputFromWindow(currenScreenView.getWindowToken(), 0);
+                        }
+
                         /*Toast.makeText(MainActivity.this, "incorrect password", Toast.LENGTH_SHORT).show();*/
                         Snackbar.make(v, "incorrect password", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
