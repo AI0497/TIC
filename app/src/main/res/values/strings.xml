@@ -20,6 +20,7 @@
     <string name="new_member_form_emergency_phone">Emergency Phone</string>
     <string name="radio_text_male">male</string>
     <string name="radio_text_female">female</string>
+    <string name="str_content_description">Profile Photo</string>
 
 
 </resources>
