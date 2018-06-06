@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity
 
                     /*hide the software keyboard when log in button is clicked*/
                     // check if no view has focus
-                    View currenScreenView = MainActivity.this.getCurrentFocus();
-                    if (currenScreenView != null)
+                    View currentFocus = MainActivity.this.getCurrentFocus();
+                    if (currentFocus != null)
                     {
                         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        inputMethodManager.hideSoftInputFromWindow(currenScreenView.getWindowToken(), 0);
+                        inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
                     }
 
                     // replace this Toast with a Snackbar
