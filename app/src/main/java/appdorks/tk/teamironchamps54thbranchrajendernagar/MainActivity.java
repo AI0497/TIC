@@ -2,6 +2,7 @@ package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity
 
         btn = findViewById(R.id.button);
         editText = findViewById(R.id.editText);
+
+        //check if the phone has a hardware camera
+        checkCameraHardware(this);
 
         btn.setOnClickListener(new View.OnClickListener()
         {
@@ -79,4 +83,30 @@ public class MainActivity extends AppCompatActivity
         });
 
     }
+
+    /** Check if this device has a camera */
+    private boolean checkCameraHardware(Context context)
+    {
+        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA))
+        {
+            // this device has a camera
+            return true;
+        }
+        else
+        {
+            // no camera on this device
+            return false;
+        }
+    }
+
+    public void checkPermissions()
+    {
+        //TODO check for hardware and permissions here when the app loads
+
+        // TODO check for camera
+
+
+
+    }
+
 }
