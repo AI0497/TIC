@@ -19,9 +19,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
 {
 
-    private Button btn;
-    private EditText editText;
-    private String userPassword;
+    private Button mBtnLogIn;
+    private EditText mEtPassword;
+    private String strUserPassword;
 
     public static final String TAG = "MainActivity";
 
@@ -32,20 +32,20 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = findViewById(R.id.button);
-        editText = findViewById(R.id.et_appEntryPassword);
+        mBtnLogIn = findViewById(R.id.btn_appEntryPassword);
+        mEtPassword = findViewById(R.id.et_appEntryPassword);
 
         //check if the phone has a hardware camera
         checkCameraHardware(this);
 
-        btn.setOnClickListener(new View.OnClickListener()
+        mBtnLogIn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                userPassword = editText.getText().toString().trim();
+                strUserPassword = mEtPassword.getText().toString().trim();
 
-                if (userPassword.isEmpty())
+                if (strUserPassword.isEmpty())
                 {
 
                     /*hide the software keyboard when log in button is clicked*/
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else
                 {
-                    if (userPassword.equals("1248"))
+                    if (strUserPassword.equals("1248"))
                     {
                         Log.i(TAG, "onClick: password correct, starting dashboard activity");
                         // start new activity
@@ -128,6 +128,7 @@ public class MainActivity extends AppCompatActivity
             return false;
         }
     }
-    /*TODO: refactor var names according to convention*/
+
+    /*TODO: check/grant INTERNET & EXTERNAL_STORAGE PERMISSIONS HERE*/
 
 }
