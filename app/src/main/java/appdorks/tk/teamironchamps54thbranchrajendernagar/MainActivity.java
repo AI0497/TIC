@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mBtnLogIn = findViewById(R.id.btn_appEntryPassword);
+        mBtnLogIn = findViewById(R.id.btn_app_entry_password);
         mEtPassword = findViewById(R.id.et_app_entry_password);
 
         //check if the phone has a hardware camera
