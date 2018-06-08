@@ -23,17 +23,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_appEntryPassword"
+            android:id="@+id/tv_app_entry_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:labelFor="@+id/et_appEntryPassword"
+            android:labelFor="@+id/et_app_entry_password"
             android:text="@string/password"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/et_appEntryPassword"
+            android:id="@+id/et_app_entry_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -41,7 +41,7 @@
             android:inputType="numberPassword" />
 
         <Button
-            android:id="@+id/btn_appEntryPassword"
+            android:id="@+id/btn_app_entry_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
