@@ -86,7 +86,8 @@ public class AddMember extends AppCompatActivity
             mImageView.setVisibility(View.VISIBLE);
             mImageView.setImageBitmap(imageBitmap);
 
-            // TODO: save the image to external storage for the user
+            /*TODO: start camera intent, capture image, receive the result, set the imageView as visible, set the image to imageview, set the imagebutton as invisible, save the image to external storage*/
+
 
         }
     }
