@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
                     Snackbar.make(v, "please enter a password", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
+                    Log.i(TAG, "onClick: password field empty, Snackbar shown");
                 }
                 else
                 {
