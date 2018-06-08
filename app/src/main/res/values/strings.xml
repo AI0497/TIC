@@ -21,6 +21,8 @@
     <string name="radio_text_male">male</string>
     <string name="radio_text_female">female</string>
     <string name="str_content_description">Profile Photo</string>
+    <string name="title_member_list">Members</string>
+    <string name="title_member_detail">Member Detail</string>
 
 
 </resources>
