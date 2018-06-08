@@ -126,5 +126,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     /*TODO: insert activity logs*/
+    /*TODO: refactor var names according to convention*/
 
 }
