@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
                         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
 
-                        Log.i(TAG, "onClick: password field empty, keyboard hidden for Snackbar");
+                        Log.e(TAG, "onClick: password field empty, keyboard hidden for Snackbar");
 
                     }
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity
                     Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
                     Snackbar.make(v, "please enter a password", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
-                    Log.i(TAG, "onClick: password field empty, Snackbar shown");
+                    Log.e(TAG, "onClick: password field empty, Snackbar shown");
                 }
                 else
                 {
@@ -76,20 +76,23 @@ public class MainActivity extends AppCompatActivity
                         startActivity(new Intent(MainActivity.this, Dashboard.class));
                         finish();
                     }
-                    else
+                    else //the password entered was incorrect
                     {
                         /*hide the software keyboard when log in button is clicked*/
                         // check if no view has focus
-                        View currenScreenView = MainActivity.this.getCurrentFocus();
-                        if (currenScreenView != null)
+                        View currentFocus = MainActivity.this.getCurrentFocus();
+                        if (currentFocus != null)
                         {
                             InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                            inputMethodManager.hideSoftInputFromWindow(currenScreenView.getWindowToken(), 0);
+                            inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+
+                            Log.e(TAG, "onClick: password incorrect, keyboard hidden for snackbar");
                         }
 
                         /*Toast.makeText(MainActivity.this, "incorrect password", Toast.LENGTH_SHORT).show();*/
                         Snackbar.make(v, "incorrect password", Snackbar.LENGTH_SHORT)
                                 .setAction("Action", null).show();
+                        Log.e(TAG, "onClick: password incorrect, snackbar shown");
                     }
                 }
             }
@@ -107,21 +110,13 @@ public class MainActivity extends AppCompatActivity
             // check if the phone has camera permission
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
             {
-                /*if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA))
-                {
-
-                }
-                else
-                {
-                    // No explanation needed; request the permission
-                    ActivityCompat.requestPermissions(this,
-                            new String[]{Manifest.permission.READ_CONTACTS}, 1);
-                }*/
                 ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 1);
+                Log.i(TAG, "checkCameraHardware: permission grant prompt shown for camera permission");
             }
             else
             {
                 // Permission has already been granted
+                Log.i(TAG, "checkCameraHardware: camera permission is already granted");
             }
 
             return true;
@@ -130,11 +125,10 @@ public class MainActivity extends AppCompatActivity
         {
             // no camera on this device
             Toast.makeText(context, "camera hardware not found!", Toast.LENGTH_LONG).show();
+            Log.e(TAG, "checkCameraHardware: camera hardware not found on the device!");
             return false;
         }
     }
-
-    /*TODO: insert activity logs*/
     /*TODO: refactor var names according to convention*/
 
 }
