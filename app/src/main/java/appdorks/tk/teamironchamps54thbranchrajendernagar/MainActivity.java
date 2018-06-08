@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.Camera;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         btn = findViewById(R.id.button);
-        editText = findViewById(R.id.editText);
+        editText = findViewById(R.id.et_appEntryPassword);
 
         //check if the phone has a hardware camera
         checkCameraHardware(this);
