@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -23,9 +24,12 @@ public class MainActivity extends AppCompatActivity
     private EditText editText;
     private String userPassword;
 
+    public static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -52,10 +56,13 @@ public class MainActivity extends AppCompatActivity
                     {
                         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+
+                        Log.i(TAG, "onClick: password field empty, keyboard hidden for Snackbar");
+
                     }
 
-                    // replace this Toast with a Snackbar
-                    /*Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
+                    /*replace this Toast with a Snackbar
+                    Toast.makeText(MainActivity.this, "please enter password first", Toast.LENGTH_SHORT).show();*/
                     Snackbar.make(v, "please enter a password", Snackbar.LENGTH_SHORT)
                             .setAction("Action", null).show();
                 }
