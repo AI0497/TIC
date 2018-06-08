@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     if (userPassword.equals("1248"))
                     {
+                        Log.i(TAG, "onClick: password correct, starting dashboard activity");
                         // start new activity
                         startActivity(new Intent(MainActivity.this, Dashboard.class));
                         finish();
