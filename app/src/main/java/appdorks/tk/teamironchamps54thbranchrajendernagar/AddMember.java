@@ -2,6 +2,7 @@ package appdorks.tk.teamironchamps54thbranchrajendernagar;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -9,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -22,8 +24,12 @@ import java.util.Date;
 public class AddMember extends AppCompatActivity
 {
 
+    public static final String TAG = "AddMember";
+    public static final int REQUEST_CODE = 1100;
+
     private ImageButton mImageButton;
     private ImageView mImageView;
+    private Bitmap imageBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -72,22 +78,44 @@ public class AddMember extends AppCompatActivity
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null)
         {
-            startActivityForResult(takePictureIntent, 1);
+            startActivityForResult(takePictureIntent, REQUEST_CODE);
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == 1 && resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
+        {
             Toast.makeText(this, "image captured", Toast.LENGTH_SHORT).show();
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            mImageButton.setVisibility(View.GONE);
-            mImageView.setVisibility(View.VISIBLE);
-            mImageView.setImageBitmap(imageBitmap);
+            Log.i(TAG, "onActivityResult: image captured via CameraIntent");
 
-            /*TODO: start camera intent, capture image, receive the result, set the imageView as visible, set the image to imageview, set the imagebutton as invisible, save the image to external storage*/
+            Bundle extras = data.getExtras();
+            if (extras == null)
+            {
+                Toast.makeText(this, "bundle is empty", Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "onActivityResult: bundle returned empty");
+            }
+            else
+            {
+                imageBitmap = (Bitmap) extras.get("data");
+                Log.i(TAG, "onActivityResult: bundle received with data");
+
+                //mImageButton.setVisibility(View.INVISIBLE);
+                //mImageView.setVisibility(View.VISIBLE);
+                mImageView.setImageBitmap(imageBitmap);
+
+            }
+
+
+
+            /*TODO: start camera intent,
+             capture image,
+              receive the result,
+               set the imageView as visible,
+                set the image to imageview,
+                 set the imagebutton as invisible,
+                  save the image to external storage*/
         }
         else
         {
