@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -78,8 +79,8 @@ public class AddMember extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == 1 && resultCode == RESULT_OK)
-        {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            Toast.makeText(this, "image captured", Toast.LENGTH_SHORT).show();
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageButton.setVisibility(View.GONE);
@@ -87,8 +88,10 @@ public class AddMember extends AppCompatActivity
             mImageView.setImageBitmap(imageBitmap);
 
             /*TODO: start camera intent, capture image, receive the result, set the imageView as visible, set the image to imageview, set the imagebutton as invisible, save the image to external storage*/
-
-
+        }
+        else
+        {
+            Toast.makeText(this, "some error occurred", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -109,5 +112,7 @@ public class AddMember extends AppCompatActivity
         mCurrentPhotoPath = image.getAbsolutePath();
         return image;
     }
+
+    /*TODO: write logs for events*/
 
 }
