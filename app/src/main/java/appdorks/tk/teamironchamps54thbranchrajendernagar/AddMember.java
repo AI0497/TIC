@@ -32,8 +32,8 @@ public class AddMember extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mImageButton = findViewById(R.id.imgBtnPhoto);
-        mImageView = findViewById(R.id.imgPhoto);
+        mImageButton = findViewById(R.id.imgBtn_photo);
+        mImageView = findViewById(R.id.img_photo);
 
         mImageButton.setOnClickListener(new View.OnClickListener()
         {
