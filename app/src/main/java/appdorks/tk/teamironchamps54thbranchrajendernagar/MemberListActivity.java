@@ -12,12 +12,11 @@ import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
-import appdorks.tk.teamironchamps54thbranchrajendernagar.dummy.DummyContent;
+import appdorks.tk.teamironchamps54thbranchrajendernagar.data.DummyContent;
 
 import java.util.List;
 

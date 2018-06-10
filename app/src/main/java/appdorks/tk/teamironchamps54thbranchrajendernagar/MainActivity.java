@@ -36,7 +36,11 @@ public class MainActivity extends AppCompatActivity
         mEtPassword = findViewById(R.id.et_app_entry_password);
 
         //check if the phone has a hardware camera
-        checkCameraHardware(this);
+        if (!checkCameraHardware(this))
+        {
+            Log.e(TAG, "onCreate: camera not found error toast shown");
+            Toast.makeText(this, "camera hardware not found! please check the device.", Toast.LENGTH_SHORT).show();
+        }
 
         mBtnLogIn.setOnClickListener(new View.OnClickListener()
         {
@@ -123,7 +127,6 @@ public class MainActivity extends AppCompatActivity
         else
         {
             // no camera on this device
-            Toast.makeText(context, "camera hardware not found!", Toast.LENGTH_LONG).show();
             Log.e(TAG, "checkCameraHardware: camera hardware not found on the device!");
             return false;
         }

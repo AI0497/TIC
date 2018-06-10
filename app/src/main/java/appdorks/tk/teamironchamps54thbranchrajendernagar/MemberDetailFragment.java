@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import appdorks.tk.teamironchamps54thbranchrajendernagar.dummy.DummyContent;
+import appdorks.tk.teamironchamps54thbranchrajendernagar.data.DummyContent;
 
 /**
  * A fragment representing a single Member detail screen.
