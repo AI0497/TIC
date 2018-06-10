@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity
     private String strUserPassword;
 
     public static final String TAG = "MainActivity";
+    public static final int REQUEST_CODE_CAMERA = 1;
+    public static final int REQUEST_CODE_INTERNET = 2;
+    public static final int REQUEST_CODE_STORAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -113,8 +116,9 @@ public class MainActivity extends AppCompatActivity
             // check if the phone has camera permission
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
             {
-                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, 1);
-                Log.i(TAG, "checkCameraHardware: permission grant prompt shown for camera permission");
+                // camera permission is not granted
+                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, REQUEST_CODE_CAMERA);
+                Log.i(TAG, "checkCameraHardware: permission prompt for CAMERA");
             }
             else
             {
@@ -132,6 +136,23 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    /*TODO: check/grant INTERNET & EXTERNAL_STORAGE PERMISSIONS HERE*/
+
+    private boolean checkPermissions()
+    {
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
+        {
+            // Internet permission is not granted
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.INTERNET}, REQUEST_CODE_INTERNET);
+            Log.i(TAG, "checkPermissions: permission prompt for INTERNET");
+            return true;
+        }
+        else
+        {
+            // permission is granted
+            Log.i(TAG, "checkPermissions: INTERNET permission was already granted");
+            return true;
+        }
+
+    }
 
 }
