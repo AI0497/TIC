@@ -136,23 +136,4 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    private boolean checkPermissions()
-    {
-        if (ContextCompat.checkSelfPermission(this,Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED)
-        {
-            // Internet permission is not granted
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.INTERNET}, REQUEST_CODE_INTERNET);
-            Log.i(TAG, "checkPermissions: permission prompt for INTERNET");
-            return true;
-        }
-        else
-        {
-            // permission is granted
-            Log.i(TAG, "checkPermissions: INTERNET permission was already granted");
-            return true;
-        }
-
-    }
-
 }
