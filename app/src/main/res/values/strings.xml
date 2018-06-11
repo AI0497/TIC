@@ -24,5 +24,7 @@
     <string name="title_member_list">Members</string>
     <string name="title_member_detail">Member Detail</string>
 
+    <string name="add_member_form_dialog_save">Save</string>
+    <string name="add_member_form_dialog_discard">Discard</string>
 
 </resources>
