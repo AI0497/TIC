@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity
                     else //the password entered was incorrect
                     {
                         /*hide the software keyboard when log in button is clicked*/
+
                         // check if no view has focus
                         View currentFocus = MainActivity.this.getCurrentFocus();
                         if (currentFocus != null)
@@ -136,4 +138,28 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    boolean backPressed = false;
+
+    @Override
+    public void onBackPressed()
+    {
+        if (backPressed)
+        {
+            super.onBackPressed();
+            return;
+        }
+
+        this.backPressed = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable()
+        {
+
+            @Override
+            public void run()
+            {
+                backPressed =false;
+            }
+        }, 2000);
+    }
 }
