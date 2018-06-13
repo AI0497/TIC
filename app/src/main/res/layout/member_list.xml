@@ -6,8 +6,8 @@
     android:name="appdorks.tk.teamironchamps54thbranchrajendernagar.MemberListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_margin="8dp"
+    android:background="@android:color/darker_gray"
     app:layoutManager="LinearLayoutManager"
     tools:context=".MemberListActivity"
     tools:listitem="@layout/member_list_content" />
