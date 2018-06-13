@@ -138,18 +138,18 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    boolean backPressed = false;
+    boolean backPressedTwice = false;
 
     @Override
     public void onBackPressed()
     {
-        if (backPressed)
+        if (backPressedTwice)
         {
             super.onBackPressed();
             return;
         }
 
-        this.backPressed = true;
+        this.backPressedTwice = true;
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable()
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void run()
             {
-                backPressed =false;
+                backPressedTwice = false;
             }
         }, 2000);
     }
