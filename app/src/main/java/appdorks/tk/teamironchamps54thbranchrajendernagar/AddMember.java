@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -70,6 +71,9 @@ public class AddMember extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // bug fix #4 : force fix the screen orientation to portrait
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // editTexts for first and last name
         mEditFirstName = findViewById(R.id.et_first_name);
@@ -413,5 +417,12 @@ public class AddMember extends AppCompatActivity
     }
 
     /*TODO: write logs for events*/
+
+    /*TODO: save form values to bundleInstance*/
+
+    public void saveValuesToBundle()
+    {
+
+    }
 
 }

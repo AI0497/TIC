@@ -59,6 +59,4 @@ public class Dashboard extends AppCompatActivity
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }*/
 
-    /*TODO: add logs for events*/
-
 }
