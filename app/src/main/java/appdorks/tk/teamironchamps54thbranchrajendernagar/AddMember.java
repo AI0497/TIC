@@ -338,13 +338,6 @@ public class AddMember extends AppCompatActivity
 
     }
 
-    @Override
-    protected void onRestart()
-    {
-        super.onRestart();
-        startActivity(new Intent(getApplicationContext(), AddMember.class));
-    }
-
     private void dispatchTakePictureIntent()
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
