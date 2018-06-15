@@ -26,5 +26,7 @@
 
     <string name="add_member_form_dialog_save">Save</string>
     <string name="add_member_form_dialog_discard">Discard</string>
+    <string name="str_menu_item_about">About The App</string>
+    <string name="str_menu_item_change_password">Change Password</string>
 
 </resources>
