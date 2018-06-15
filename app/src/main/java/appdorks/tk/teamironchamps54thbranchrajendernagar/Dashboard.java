@@ -51,13 +51,13 @@ public class Dashboard extends AppCompatActivity
 
     }
 
-    @Override
+    /*@Override
     protected void onRestart()
     {
         super.onRestart();
         Log.i(TAG, "onRestart: activity restarted, taking to MainActivity");
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
+    }*/
 
     /*TODO: add logs for events*/
 

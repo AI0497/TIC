@@ -406,6 +406,12 @@ public class AddMember extends AppCompatActivity
         return image;
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+    }
+
     /*TODO: write logs for events*/
 
 }
