@@ -159,7 +159,7 @@ public class AddMember extends AppCompatActivity
 
                 // before actually entering the values in the database, let the user verify them by showing them in a dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddMember.this);
-                builder.setMessage("Please check the details \n" +
+                builder.setMessage(
                         "Name: " + mStringFirstName + " " + mStringLastName + "\n" +
                         "Gender: " + ((mIntGender == 0)? "Male": (mIntGender == 4) ? "NA" : "Female" ) + "\n" +
                         "Height: " +  mIntHeightFt + " ft " + mIntHeightIn + " in " + "\n" +
@@ -219,7 +219,7 @@ public class AddMember extends AppCompatActivity
                     {
                         /*Toast.makeText(AddNewMember.this, "no clicked", Toast.LENGTH_SHORT).show();*/
                     }
-                });
+                }).setTitle("Please check the details");
 
                 AlertDialog dialog = builder.create();
 
@@ -356,7 +356,6 @@ public class AddMember extends AppCompatActivity
     {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
         {
-            Toast.makeText(this, "image captured", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "onActivityResult: image captured via CameraIntent");
 
             Bundle extras = data.getExtras();
