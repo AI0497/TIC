@@ -356,7 +356,6 @@ public class AddMember extends AppCompatActivity
     {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
         {
-            Toast.makeText(this, "image captured", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "onActivityResult: image captured via CameraIntent");
 
             Bundle extras = data.getExtras();
