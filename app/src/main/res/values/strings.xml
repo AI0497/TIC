@@ -29,6 +29,6 @@
     <string name="str_menu_item_about">About The App</string>
     <string name="str_menu_item_change_password">Change Password</string>
     <string name="title_activity_about">AboutActivity</string>
-    <string name="str_about_app"><![CDATA[This app is dedicated to the hardwork and efforts of Mr. Amit Singh, our mentor and guide at Team Iron Champs Gym, 54th Branch, Rajender Nagar. Team AppDorks (Asif, Divyansh & Viraj).]]></string>
+    <string name="str_about_app"><![CDATA[This app is dedicated to the hardwork and efforts of Mr. Amit Singh, our mentor and guide at Team Iron Champs Gym, 54th Branch, Rajender Nagar.\nTeam AppDorks (Asif, Divyansh & Viraj).]]></string>
 
 </resources>
