@@ -71,7 +71,7 @@ public class Dashboard extends AppCompatActivity
         switch (itemid)
         {
             case R.id.menu_item_about_app :
-                Toast.makeText(this, "show about the app activity here", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 break;
             case R.id.menu_item_change_password :
                 Toast.makeText(this, "show dialog to change app password", Toast.LENGTH_SHORT).show();
