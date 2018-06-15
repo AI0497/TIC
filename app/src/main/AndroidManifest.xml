@@ -20,8 +20,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/TICTheme"
-            android:noHistory="true">
+            android:noHistory="true"
+            android:theme="@style/TICTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,6 +58,15 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="appdorks.tk.teamironchamps54thbranchrajendernagar.MemberListActivity" />
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".Dashboard"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="appdorks.tk.teamironchamps54thbranchrajendernagar.Dashboard" />
         </activity>
     </application>
 
