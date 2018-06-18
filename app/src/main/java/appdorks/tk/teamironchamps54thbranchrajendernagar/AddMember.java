@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -70,6 +71,9 @@ public class AddMember extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // bug fix #4 : force fix the screen orientation to portrait
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // editTexts for first and last name
         mEditFirstName = findViewById(R.id.et_first_name);
@@ -155,7 +159,7 @@ public class AddMember extends AppCompatActivity
 
                 // before actually entering the values in the database, let the user verify them by showing them in a dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(AddMember.this);
-                builder.setMessage("Please check the details \n" +
+                builder.setMessage(
                         "Name: " + mStringFirstName + " " + mStringLastName + "\n" +
                         "Gender: " + ((mIntGender == 0)? "Male": (mIntGender == 4) ? "NA" : "Female" ) + "\n" +
                         "Height: " +  mIntHeightFt + " ft " + mIntHeightIn + " in " + "\n" +
@@ -215,7 +219,7 @@ public class AddMember extends AppCompatActivity
                     {
                         /*Toast.makeText(AddNewMember.this, "no clicked", Toast.LENGTH_SHORT).show();*/
                     }
-                });
+                }).setTitle("Please check user details");
 
                 AlertDialog dialog = builder.create();
 
@@ -338,13 +342,6 @@ public class AddMember extends AppCompatActivity
 
     }
 
-    @Override
-    protected void onRestart()
-    {
-        super.onRestart();
-        startActivity(new Intent(getApplicationContext(), AddMember.class));
-    }
-
     private void dispatchTakePictureIntent()
     {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -359,7 +356,6 @@ public class AddMember extends AppCompatActivity
     {
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK)
         {
-            Toast.makeText(this, "image captured", Toast.LENGTH_SHORT).show();
             Log.i(TAG, "onActivityResult: image captured via CameraIntent");
 
             Bundle extras = data.getExtras();
@@ -413,6 +409,19 @@ public class AddMember extends AppCompatActivity
         return image;
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+    }
+
     /*TODO: write logs for events*/
+
+    /*TODO: save form values to bundleInstance*/
+
+    public void saveValuesToBundle()
+    {
+
+    }
 
 }

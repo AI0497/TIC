@@ -7,8 +7,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity
 {
@@ -52,13 +56,38 @@ public class Dashboard extends AppCompatActivity
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.dashboard_menu, menu);
+        //return super.onCreateOptionsMenu(menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int itemid = item.getItemId();
+        switch (itemid)
+        {
+            case R.id.menu_item_about_app :
+                startActivity(new Intent(getApplicationContext(), AboutActivity.class));
+                break;
+            case R.id.menu_item_change_password :
+                Toast.makeText(this, "show dialog to change app password", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                Toast.makeText(this, "this is a bug, please report!", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*@Override
     protected void onRestart()
     {
         super.onRestart();
         Log.i(TAG, "onRestart: activity restarted, taking to MainActivity");
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-    }
-
-    /*TODO: add logs for events*/
+    }*/
 
 }
