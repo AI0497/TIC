@@ -219,7 +219,7 @@ public class AddMember extends AppCompatActivity
                     {
                         /*Toast.makeText(AddNewMember.this, "no clicked", Toast.LENGTH_SHORT).show();*/
                     }
-                }).setTitle("Please check the details");
+                }).setTitle("Please check user details");
 
                 AlertDialog dialog = builder.create();
 
